@@ -10,8 +10,8 @@ namespace StatOperations
 
             var sum = Ops.Addition.Sum(values);
             var valueCount = Helpers.Array.Length(values);
-            var result = Ops.Division.Quotient(sum, valueCount);
-            return result;
+            var result = Ops.Division.Quot(sum, valueCount);
+            return Helpers.Rounding.RoundToTwoDecimalPlaces(result);
         }
 
         public static dynamic StandardDeviation(dynamic values)
@@ -33,7 +33,7 @@ namespace StatOperations
             //Step 4 - Divide by the number of data points.
             var resultOfStep3and4 = Mean(dataPointsArray);
             //Step 5 - Take the square root.
-            var result = Ops.SquareRoot.Squareroot(resultOfStep3and4);
+            var result = Ops.SquareRoot.Root(resultOfStep3and4);
             return result;
         }
 
@@ -43,8 +43,8 @@ namespace StatOperations
             var mean = Mean(values);
             var standardDeviation = StandardDeviation(values);
 
-            var difference = Ops.Subtraction.Subtract(dataPoint, mean);
-            var result = Ops.Division.Quotient(difference, standardDeviation);
+            var difference = Ops.Subtraction.Difference(dataPoint, mean);
+            var result = Ops.Division.Quot(difference, standardDeviation);
             return result;
         }
 
@@ -54,15 +54,15 @@ namespace StatOperations
             var valueCount = Helpers.Array.Length(values);
             if (valueCount % 2 == 0) //even number
             {
-                var step1 = Ops.Division.Quotient(valueCount, 2);
+                var step1 = Ops.Division.Quot(valueCount, 2);
                 var step2 = Ops.Addition.Sum(step1, 1);
                 var step3 = Ops.Addition.Sum(step1, step2);
-                median = Ops.Division.Quotient(step3, 2);
+                median = Ops.Division.Quot(step3, 2);
             }
             else //old number
             {
                 var valueCountPlusOne = Ops.Addition.Sum(valueCount, 1);
-                median = Ops.Division.Quotient(valueCountPlusOne, 2);
+                median = Ops.Division.Quot(valueCountPlusOne, 2);
             }
             return median;
         }

@@ -6,7 +6,7 @@ namespace StatisticsCalculator
     {
         public dynamic Mean(dynamic values)
         {
-            result = StatOperations.StatsOperations.Mean(values);
+            result = StatOperations.StatOperations.Mean(values);
             return result;
         }
 
