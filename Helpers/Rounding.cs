@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Helpers
 {
-    class Rounding
+    public class Rounding
     {
         public static double RoundToTwoDecimalPlaces(double value, int numberOfDecimalPlaces = 2)
         {
