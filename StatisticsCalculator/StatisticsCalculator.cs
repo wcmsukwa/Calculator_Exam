@@ -1,8 +1,9 @@
 ﻿using System;
+using BasicCalculator;
 
 namespace StatisticsCalculator
 {
-    public class StatisticsCalculator : Calculator,IStatisticsCalculator
+    public class StatisticsCalculator : Calc,IStatisticsCalculator
     {
         public dynamic Mean(dynamic values)
         {
