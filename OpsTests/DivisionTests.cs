@@ -42,11 +42,11 @@ namespace Ops.Tests
             Assert.AreEqual(0.005, Division.Quot(arrayB));
         }
 
-        [TestMethod()]
+       /* [TestMethod()]
          public void DivByZeroTest()
          {
              Assert.ThrowsException<DivideByZeroException>(() => Division.Quot(a, c));
-         }
+         }*/
          
     }
 }
